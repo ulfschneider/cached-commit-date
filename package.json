@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulfschneider/cached-commit-date.git"
+  },
+  "author": "Ulf Schneider",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ulfschneider/cached-commit-date/issues"
+  },
+  "homepage": "https://ulf.codes",
   "dependencies": {
     "cross-spawn": "^7.0.3",
     "path": "^0.12.7"
