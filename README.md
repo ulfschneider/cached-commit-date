@@ -19,6 +19,12 @@ const ccd = require('cached-commit-date');
 let date = ccd.commitDate('./content/posts/journal/2020-07-04-learn-eleventy-from-scratch.md'); //sample file path
 ```
 
+## Clearing the cache
+
+```js
+ccd.clearCache();
+```
+
 ## Configuration
 
 There is no configuration.
