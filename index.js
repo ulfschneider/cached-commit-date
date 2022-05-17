@@ -2,10 +2,9 @@ const path = require('path');
 const spawn = require('cross-spawn');
 const commitCache = new Map();
 
-//get the latest commit date for the given file path
-//if the file is not committed yet, return null
-
 module.exports = {
+    //get the latest commit date for the given file path
+    //if the file is not committed yet, return null
     commitDate: function (filePath) {
 
         let commitDate = commitCache.get(filePath);
@@ -21,7 +20,7 @@ module.exports = {
                 { cwd: path.dirname(filePath) }
             ).stdout.toString('utf-8')) * 1000);
         } catch (e) {
-            console.log(e);
+            console.log(`Commit date for ${filePath} could not be determined`);
         }
         if (commitDate) {
             commitCache.set(filePath, commitDate);
