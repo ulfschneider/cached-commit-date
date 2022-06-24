@@ -14,11 +14,15 @@ module.exports = {
             commitDate = null;
         }
         try {
-            commitDate = new Date(parseInt(spawn.sync(
+            let seconds = parseInt(spawn.sync(
                 'git',
                 ['log', '-1', '--format=%at', path.basename(filePath)],
                 { cwd: path.dirname(filePath) }
-            ).stdout.toString('utf-8')) * 1000);
+            ).stdout.toString('utf-8'));
+
+            if (!isNaN(seconds)) {
+                commitDate = new Date(seconds * 1000);
+            }
         } catch (e) {
             console.log(`Commit date for ${filePath} could not be determined`);
         }
